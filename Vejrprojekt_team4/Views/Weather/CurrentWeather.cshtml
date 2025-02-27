@@ -1,0 +1,13 @@
+﻿@model Weather
+
+@if (Model != null) {
+    <p>Weather: @Model.Main</p>
+    <p>Weather Description: @Model.Description</p>
+}
+else {
+    <p>No weather data available</p>
+}
+
+@* <form action="SetLongitude" method="post">
+    <input type="type" name="name" value="" />
+</form> *@

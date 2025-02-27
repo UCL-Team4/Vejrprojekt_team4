@@ -1,11 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using Vejrprojekt_team4.endpoint;
 using Vejrprojekt_team4.Models;
 
 namespace Vejrprojekt_team4.Controllers
 {
     public class WeatherController : Controller
     {
+        public async Task<IActionResult> CurrentWeather()
+        {
+            return View(await GetWeather.GetWeatherAtLocation(-30.44564m, -71.79117m));
+        }
+
         public async Task<IActionResult> Index()
         {
             var client = new HttpClient();
