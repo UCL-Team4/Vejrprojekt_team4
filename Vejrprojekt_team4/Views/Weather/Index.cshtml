@@ -1,0 +1,30 @@
+﻿@model WeatherResponse
+
+
+<h1>Weather Forecast</h1>
+
+@if (Model != null)
+{
+	<p>Weather: @Model.Weather[0].Main</p>
+	<p>Description: @Model.Weather[0].Description</p>
+
+	<table>
+		<tr>
+			<td>Day Icon</td>
+			<td>Night Icon</td>
+			<td>Description</td>
+		</tr>
+		<tr>
+			<td>
+				<img src=@Model.Weather[0].Icon alt="Alternate Text" />
+			</td>
+			<td>
+				<img src=@Model.Weather[0].OtherIcon alt="Alternate Text" />
+			</td>
+			<td>@Model.Weather[0].Description</td>
+		</tr>
+	</table>
+}
+else {
+	<p>No weather data available</p>
+}
